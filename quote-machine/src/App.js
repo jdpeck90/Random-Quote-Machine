@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.scss';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
+import Icon from './Components/Icon'; 
+
+
+library.add(faCheckSquare, faCoffee)
 
 class App extends Component {
   render() {
@@ -11,6 +17,7 @@ class App extends Component {
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
+          <Icon />
           <a
             className="App-link"
             href="https://reactjs.org"
