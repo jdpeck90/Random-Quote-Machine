@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.scss';
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { library2 } from '@fortawesome/free-solid-svg-icons'
 import Icon from './Components/Icon'; 
+import BodyCopy from './Components/BodyCopy';
+import Wrapper from './Containers/Wrapper';
 
-
-library.add(faCheckSquare, faCoffee)
+library.add(library2)
 
 class App extends Component {
   render() {
@@ -17,15 +18,16 @@ class App extends Component {
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
-          <Icon />
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <Wrapper type="quote">
+            <BodyCopy text={`test from app.js`} size="l" quote/>
+            <BodyCopy text={`test from app.js`} size="m" author/>          
+          </Wrapper>
+            <Icon icon="sms" size="m" />
+          <Wrapper type="social">
+            <Icon icon='twitter' size="m" />
+            <Icon icon='facebook' size="m" />
+            <Icon icon='tumblr' size="m" />
+          </Wrapper > 
         </header>
       </div>
     );

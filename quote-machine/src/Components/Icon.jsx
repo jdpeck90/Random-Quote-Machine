@@ -5,21 +5,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
  
 const propChoices = {
     sizes: ['l','m','s'],
-    types: ['twitter', 'facebook', 'tumblr', 'sms']
+    icons: ['twitter', 'facebook', 'tumblr', 'sms']
 }
 
 class Icon extends Component {
     
     static proptypes = {
-        type: PropTypes.oneOf(propChoices.types),
+        icon: PropTypes.oneOf(propChoices.icons),
         size: PropTypes.oneOf(propChoices.sizes)
     }
     
     render() {
-    
+    const {icon, size } = this.props;
+    console.log(icon, size, 'in icon')
         return (
             <div className="wrapper-icon">
-                <FontAwesomeIcon icon="coffee" size="2x" />
+                <FontAwesomeIcon icon={icon} size={size} />
             </div>
         );
   }
